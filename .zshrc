@@ -26,9 +26,11 @@ cdpath=(
 )
 
 # Set the list of directories that Zsh searches for programs.
+# Packages installed on the user's home manually or via brew/mise/asdf take precedence
 path=(
   ${HOME}/.local/bin(N)
   ${HOME}/{,s}bin(N)
+  ${HOME}/.local/share/mise/shims(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $path
