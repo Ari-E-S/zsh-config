@@ -1,7 +1,15 @@
 # Show all entries in the ZINIT array
 function zinit_config() {
+  RAW_OUTPUT=${1:-0}
+  RESET='\033[0m'
   for key in $(echo ${(k)ZINIT} | sed "s/ /\n/g" | sort); do
-    echo "$key -> ${ZINIT[$key]}";
+    echo -n "${RESET}$key -> '";
+    if [[ ${RAW_OUTPUT} -eq 0 ]]; then
+      echo -n "${ZINIT[$key]}";
+    else
+      echo -nE "${ZINIT[$key]}";
+    fi
+    echo "${RESET}'";
   done
 }
 
