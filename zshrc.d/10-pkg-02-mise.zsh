@@ -1,5 +1,10 @@
-# If installed, load mise-en-place plugin 1 second after prompt
-# Installation instructions for mise-en-place and usage:
-#   https://mise.en.dev/installing-mise.html
-zinit ice wait'1' lucid
-zinit snippet OMZP::mise
+# Activate the "mise" plugin if available
+# see https://mise.jdx.dev/
+zinit \
+  wait'0' \
+  lucid \
+  has"mise" \
+  as"null" \
+  id-as"mise-activate" \
+  atload'eval "$(mise activate zsh)"' \
+    for zdharma-continuum/null
