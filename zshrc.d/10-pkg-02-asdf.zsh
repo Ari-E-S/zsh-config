@@ -1,3 +1,5 @@
+zshconf_featureflag_enabled "ASDF" || return;
+
 # Install and initialize ASDF
 zinit \
   wait \
