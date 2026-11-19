@@ -49,6 +49,7 @@ zinit \
 
 zinit \
   pack"bgn-binary+keys" \
+  atinit"export FZF_ALT_C_OPTS=\"--walker-skip .git,node_modules,target,.terraform --preview 'ls -la {}'\"" \
     for @junegunn/fzf
 
 zinit \
