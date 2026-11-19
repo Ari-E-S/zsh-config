@@ -38,7 +38,7 @@ ADD ./files/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh \
   && useradd --shell /usr/bin/zsh -c "ZSH testing user" -m -U -G sudo -p $(openssl passwd -6 -salt xyz ${USERPASS}) ${USERNAME} \
   && mkdir -p /home/${USERNAME}/.config/zsh \
-  && chown -R ${USERNAME} /home/${USERNAME}/.config
+  && chown -R ${USERNAME} /home/${USERNAME}/.config /docker-entrypoint.sh
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
