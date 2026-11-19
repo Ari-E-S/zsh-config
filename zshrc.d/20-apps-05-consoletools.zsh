@@ -57,6 +57,13 @@ zinit \
   lucid \
     for Aloxaf/fzf-tab
 
+# Bind Ctrl+X Ctrl+E to edit the command line in $EDITOR
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# Have the cursor stop at '/', '-', and '.' when deleting words
+autoload -U select-word-style
+select-word-style bash
+# Removes '/', '-', and '.' from WORDCHARS so deletion stops at them
+export WORDCHARS=${WORDCHARS//[\/.-]}
