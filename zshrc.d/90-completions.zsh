@@ -2,6 +2,8 @@
 # (https://zsh-abbr.olets.dev/)
 zinit \
   atload'typeset -gx ABBR_SET_EXPANSION_CURSOR=1' \
+  wait'1' \
+  lucid \
   load \
     for olets/zsh-abbr
 
