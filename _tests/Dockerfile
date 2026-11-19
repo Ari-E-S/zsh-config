@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 
 ARG USERNAME=zshtester
 ARG USERPASS=Pass1234
@@ -16,11 +16,13 @@ RUN apt-get update \
     automake \
     bsdextrautils \
     curl \
+    dialog \
     file \
     gcc \
     git \
     locales \
     make \
+    software-properties-common \
     sudo \
     tree \
     tzdata \
